@@ -6,7 +6,7 @@ public class Automata {
 
     public static void main(String[] args) {
         Automata obj = new Automata();
-        cadenaOrig = "101000000";
+        cadenaOrig = "101";
         cadenaAux = cadenaOrig;
         
         obj.Estado1(cadenaAux);
@@ -16,7 +16,8 @@ public class Automata {
     public void Estado1(String cadena){
         Automata obj1 = new Automata();
         
-        cadena = cadena.startsWith("101") ? cadena.substring(3) : cadena;
+        cadena = cadena.startsWith("101") ? cadena.substring(3) : cadena; //Evalúa 1010*
+        //cadena = cadena.startsWith("1010") ? cadena.substring(3) : cadena; //Evalúa 1010+
         
         if (cadenaAux.equals(cadena)){ // Se compara el valor de la cadena auxiliar y la cadena actual
             //Si no sufrió cambios la cadena es inválida
@@ -46,11 +47,11 @@ public class Automata {
     }
     
     public void Error(){
-        System.out.println("Cadena inválida");
+        System.out.println(cadenaOrig + "Es una cadena inválida");
     }
     
     public void Validacion(){
-        System.out.println("Cadena válida");
+        System.out.println(cadenaOrig + " Es una cadena válida");
     }
     
 }
